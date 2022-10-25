@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+  </head>
+  <body style="background-color:#C6EAFA;"><nav class="navbar navbar-expand-lg navbar-light "style="background-color:#0E3C5E">
+    <a class="navbar-brand"  href="{% url 'home'  %}"><img src="../../290642005_885807026144079_2170594995447926001_n.jpg" style="width:100px ; height:100px ;"></a>
+    <a class="navbar-brand text-white" href="{% url 'home'  %}">متجر البراء</a>
+    <button class="navbar-toggler text-right text-white" style="background-color:white"type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon text-right"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse text-right" id="navbarSupportedContent">
+      
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+                  
+        </li>
+        <li class="nav-item dropdown">
+          
+        </li>
+        <li class="nav-item">
+            
+          </li>
+      </ul>
+      
+      
+      
+        <a class="nav-link text-white" href="{% url 'home'  %}">الصفحة الرئيسية <span class="sr-only">(current)</span></a>
+        <a class="nav-link text-white" href="{%url 'addProduct'%}">صفحة المستخدم</a>
+        
+        <form class="form-inline my-2 my-lg-0  " action="" method="post">
+          {% csrf_token %}
+          <input class="form-control mr-sm-2" name="search" type="search" placeholder="البحث عن منتج" aria-label="Search" autocomplete="off">
+          <button class="btn btn-outline-light my-2 my-sm-0  " type="submit">بحث</button>
+        </form>
+    </div>
+  </nav>
+  <!-- ***************************items**************************** -->
+  <div class="container mb-5">
+    <div class="row text-right">
+      {%for i, y in context.items%}
+        
+      
+        <a href="{% url 'product' y|get_value:'id' %}" style="text-decoration:none">
+    <div class="col-md-3 mt-4">
+    <div class="card text-white"style="background-color:#0E3C5E">
+      {%if y|get_value:'image'%}
+      
+    <img class="card-img-top" src="{{ y|get_value:'image'|get_image:'Image'|get_url:'url' }}" alt="Card image cap" style="width: 100%; height:200px ;">
+    {%endif%}
+    <div class="card-body">
+    <h5 class="card-title ">{{ y|get_value:'name' }}</h5>
+    <h5 class="card-title ">{{ y|get_value:'price' }}   S.P</h5>
+    </div>
+    
+    </div>
+    </a>
+    
+    </div>
+      
+    {%endfor%}
+            </div>
+ <!-- ***************************pagenation**************************** -->
+ <style>  
+  h2 {  
+  padding: 25px 0;  
+  text-align: center;  
+  color: #fff;  
+  background: #7c8490;  
+  }  
+  footer {  
+   background: #343A40;
+    color: white;  
+    margin-top:100px;  
+  }  
+  footer a {  
+    color: #fff;  
+    font-size: 14px;  
+    transition-duration: 0.2s;  
+  }  
+  footer a:hover {  
+    color: #FA944B;  
+    text-decoration: none;  
+  }  
+  .copy {  
+    font-size: 12px;  
+    padding: 10px;  
+    border-top: 1px solid #FFFFFF;  
+  }  
+  .footer-middle {  
+    padding-top: 2em;  
+    color: white;  
+  }  
+  ul.social-network {  
+    list-style: none;  
+    display: inline;  
+    margin-left: 0 !important;  
+    padding: 0;  
+  }  
+  ul.social-network li {  
+    display: inline;  
+    margin: 0 5px;  
+  }  
+    
+  .social-network a.icoFacebook:hover {  
+    background-color: #3B5998;  
+  }  
+  .social-network a.icoLinkedin:hover {  
+    background-color: #007bb7;  
+  }  
+  .social-network a.icoFacebook:hover i  
+  {  
+    color: #fff;  
+  }  
+  .social-network a.icoLinkedin:hover i {  
+    color: #fff;  
+  }  
+  .social-network a.socialIcon:hover {  
+    color: #44BCDD;  
+  }  
+  .socialHoverClass {  
+    color: #44BCDD;  
+  }  
+  .social-circle li a {  
+    display: inline-block;  
+    position: relative;  
+    margin: 0 auto 0 auto;  
+    -moz-border-radius: 50%;  
+    -webkit-border-radius: 50%;  
+    border-radius: 50%;  
+    text-align: center;  
+    width: 30px;  
+    height: 30px;  
+    font-size: 15px;  
+  }  
+  .social-circle li i {  
+    margin: 0;  
+    line-height: 30px;  
+    text-align: center;  
+  }  
+  .social-circle li a:hover i  
+  {  
+    -moz-transform: rotate(360deg);  
+    -webkit-transform: rotate(360deg);  
+    -ms--transform: rotate(360deg);  
+    transform: rotate(360deg);  
+    -webkit-transition: all 0.2s;  
+    -moz-transition: all 0.2s;  
+    -o-transition: all 0.2s;  
+    -ms-transition: all 0.2s;  
+    transition: all 0.2s;  
+  }  
+  .triggeredHover {  
+    -moz-transform: rotate(360deg);  
+    -webkit-transform: rotate(360deg);  
+    -ms--transform: rotate(360deg);  
+    transform: rotate(360deg);  
+    -webkit-transition: all 0.2s;  
+    -moz-transition: all 0.2s;  
+    -o-transition: all 0.2s;  
+    -ms-transition: all 0.2s;  
+    transition: all 0.2s;  
+  }  
+  .social-circle i {  
+    color: #595959;  
+    -webkit-transition: all 0.8s;  
+    -moz-transition: all 0.8s;  
+    -o-transition: all 0.8s;  
+    -ms-transition: all 0.8s;  
+    transition: all 0.8s;  
+  }  
+  .social-network a {  
+    background-color: #F9F9F9;  
+  }  
+  .social-network a:hover {  
+  background: #ff304d;  
+  }  
+  </style> 
+  <div>     
+  <footer class="mainfooter" role="contentinfo" style="background-color:#0E3C5E">  
+    <div class="footer-middle">  
+    <div class="container">  
+      <div class="row">  
+        <div class="col-md-3 col-sm-6">  
+          <div class="footer-pad">  
+            <h4 class="text-right"> :لطلب المنتجات</h4>  
+            <ul class="list-unstyled text-right">  
+              <li><p>حصراً whatsapp الطلب عبر </p> </li>  
+            </ul>
+          </div>  
+        </div>  
+        <div class="col-md-3 col-sm-6">  
+          <div class="footer-pad">  
+            <h4 class="text-right"> :الخدمات</h4>  
+            <ul class="list-unstyled text-right">  
+              <li> خدمات طباعة </li>
+              <li> قرطاسية  </li>  
+              <li> هدايا </li>  
+              <li> عطور</li>  
+              <li> ألعاب أطفال</li> 
+              <li> حقائب و أكسسوارات</li>
+              <li> خدمات ألكترونية</li>    
+            </ul>  
+          </div>  
+        </div>  
+        <div class="col-md-3 col-sm-6">  
+          <div class="footer-pad">  
+            <h4 class="text-right"> :<img src="https://img.icons8.com/office/30/000000/marker.png"/>الموقع </h4>  
+            <ul class="list-unstyled">  
+              <li><p class="text-right"><a href="https://goo.gl/maps/UHNpG4xSgbuX9zfq5" >سوريا - دمشق - تنظيم القزاز </a></p></li>  
+            </ul>  
+          </div>  
+        </div>  
+          <div class="col-md-3">  
+              <h4 class="text-right">  :تواصل معنا  </h4>  
+              <ul class=" " style="list-style: none;">  
+            
+<li> <a href="https://www.facebook.com/albaraa19"  title="Facebook"><img src="https://img.icons8.com/office/30/000000/facebook-new.png"/>albaraa19</a> </li>  
+<li> <a href="https://wa.me/message/K6NKEUWXYDZRO1"  title="whatsapp"><img src="https://img.icons8.com/office/30/000000/whatsapp--v1.png"/>0980 731 005 </a></li>  
+<li> <a href="https://www.instagram.com/in.albaraa19/" title="instagram"> <img src="https://img.icons8.com/office/30/000000/instagram-new.png"/>in.albaraa19</a> </li>  
+<li><a href="" class="mb-2"><img src="https://img.icons8.com/office/30/000000/google-plus.png"/>albaraabookstore19@gmail</a></li>
+<li><a href="https://t.me/albaraa19" class="mb-2"><img src="https://img.icons8.com/office/30/000000/sent.png"/>https://t.me/albaraa19</a></li>
+</ul>                
+      </div>  
+      </div>  
+      <div class="row">  
+      <div class="col-md-12 copy">  
+      <h3 class="text-center"> عملنا تلبية رغباتك </h3>  
+      </div>  
+      </div>  
+    </div>  
+    </div>  
+  </footer>
+ 
+     
+<!-- ***************************pagenation**************************** -->
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+<!-- Footer -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+<!-- Footer -->
+</html>
