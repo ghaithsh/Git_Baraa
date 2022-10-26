@@ -9,7 +9,7 @@ class category(models.Model):
     parant = models.ForeignKey(
         'self', on_delete=models.CASCADE, blank=True, null=True, verbose_name="الصنف الأساسي إن وجد")
     Image = models.ImageField(
-        upload_to='category/', default="category/notfound.png", verbose_name="الصورة")
+        upload_to='media/category/', default="media/category/notfound.png", verbose_name="الصورة")
 
     def __str__(self):
         return self.main_category
@@ -34,8 +34,8 @@ class product(models.Model):
 class image_product(models.Model):
     product_name = models.ForeignKey(
         product, on_delete=models.CASCADE, verbose_name="اسم المنتج")
-    Image = models.ImageField(upload_to='prodcut/',
-                              default="product/notfound.png", verbose_name="الصورة")
+    Image = models.ImageField(upload_to='media/prodcut/',
+                              default="media/product/notfound.png", verbose_name="الصورة")
     main_image = models.BooleanField(
         default=False, verbose_name="أساسية")
 
