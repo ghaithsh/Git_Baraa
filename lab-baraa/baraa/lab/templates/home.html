@@ -12,7 +12,7 @@
     <title>Hello, world!</title>
   </head>
   <body style="background-color:#C6EAFA;"><nav class="navbar navbar-expand-lg navbar-light "style="background-color:#0E3C5E">
-    <a class="navbar-brand"  href="{% url 'home'  %}"><img src="../../media/290642005_885807026144079_2170594995447926001_n.jpg" style="width:100px ; height:100px ;"></a>
+    <a class="navbar-brand"  href="{% url 'home'  %}"><img src="../media/290642005_885807026144079_2170594995447926001_n.jpg" style="width:100px ; height:100px ;"></a>
     <a class="navbar-brand text-white" href="{% url 'home'  %}">مكتبة البراء</a>
     <button class="navbar-toggler text-right text-white" style="background-color:white"type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon text-right"></span>
@@ -52,7 +52,7 @@
 <div class="col-md-3 mt-4">
 <div class="card text-white "style="background-color:#0E3C5E">
   {%if cat.Image%}
-<img class="card-img-top"  src="{{cat.Image.url}}" alt="Card image cap" style="width: 100%; height:200px ;">
+<img class="card-img-top"  src="{{cat.Image.url}}" alt="Card image cap" style="width: 100%; height:300px ;">
 {%endif%}
 <div class="card-body">
 <h5 class="card-title ">{{cat.main_category}}</h5>
