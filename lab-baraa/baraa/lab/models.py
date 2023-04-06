@@ -1,12 +1,11 @@
 
 from django.db import models
-from django.forms import ImageField
 
 
 class category(models.Model):
     main_category = models.CharField(
         max_length=255, blank=False, null=False, unique=True, verbose_name="اسم الصنف")
-    parant = models.ForeignKey(
+    parent = models.ForeignKey(
         'self', on_delete=models.CASCADE, blank=True, null=True, verbose_name="الصنف الأساسي إن وجد")
     Image = models.ImageField(
         upload_to='Git_Baraa/lab-baraa/baraa/media/category/', default="Git_Baraa/lab-baraa/baraa/media/category/notfound.png", verbose_name="الصورة")

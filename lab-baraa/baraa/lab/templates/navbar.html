@@ -1,0 +1,51 @@
+<nav
+  class="navbar navbar-expand-lg navbar-light"
+  style="background-color: #0e3c5e"
+>
+  <a class="navbar-brand" href="{% url 'home'  %}"
+    ><img
+      src="http://127.0.0.1:8000/media/290642005_885807026144079_2170594995447926001_n.jpg"
+      style="width: 100px; height: 100px; border-radius: 15%"
+  /></a>
+  <a class="navbar-brand text-white" href="{% url 'home'  %}">مكتبة البراء</a>
+  <button
+    class="navbar-toggler text-right text-white"
+    style="background-color: white"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon text-right"></span>
+  </button>
+
+  <div class="collapse navbar-collapse text-right" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active"></li>
+      <li class="nav-item dropdown"></li>
+      <li class="nav-item"></li>
+    </ul>
+
+    <a class="nav-link text-white" href="{% url 'home'  %}"
+      >الصفحة الرئيسية <span class="sr-only">(current)</span></a
+    >
+    <a class="nav-link text-white" href="{%url 'addProduct'%}">صفحة المستخدم</a>
+
+    <form class="form-inline my-2 my-lg-0" action="" method="post">
+      {% csrf_token %}
+      <input
+        class="form-control mr-sm-2"
+        name="search"
+        type="search"
+        placeholder="البحث عن منتج"
+        aria-label="Search"
+        autocomplete="off"
+      />
+      <button class="btn btn-outline-light my-2 my-sm-0" type="submit">
+        بحث
+      </button>
+    </form>
+  </div>
+</nav>

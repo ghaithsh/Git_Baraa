@@ -10,7 +10,7 @@ urlpatterns = [
     path('product/error', views.error, name="error"),
     path('sub/<int:id>/products', views.products, name="products"),
     path('edit_price', views.edit_price, name="editPrice"),
-    path('products/<str:quary>', views.products_search, name='search'),
+    path('products/<str:query>', views.products_search, name='search'),
 
 
 ]

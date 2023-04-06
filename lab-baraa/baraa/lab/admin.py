@@ -9,7 +9,7 @@ class productAdmin(admin.ModelAdmin):
 
 
 class categoryAdmin(admin.ModelAdmin):
-    list_display = ['main_category', 'parant', 'Image']
+    list_display = ['main_category', 'parent', 'Image']
     search_fields = ['main_category', 'Image']
 
 
