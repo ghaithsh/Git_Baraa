@@ -15,9 +15,9 @@
   <!-- ***************************items**************************** -->
   <div class=" w-100  p-0 m-0 ">
     <div class="row w-100"> 
-      <div class="col-md-6 w-100 " >
+      <div class="col-md-6 w-100 pr-0 pl-4" >
   <div id="carouselExampleControls" class="carousel slide w-100 " data-ride="carousel">
-    <div class="carousel-inner w-100" style="height:500px ;">
+    <div class="carousel-inner w-100" >
       <!-- <div class="carousel-item active text-center vertical-center w-100 ml-2 " style="background-color: rgba(17, 17, 17); color:white ;">
         <img class="d-block w-100" style="height:300px ;" src="../../category/phone-hold-260nw-102320560.jpg" alt="First slide">
         <h1><p class="d-block w-100" style="height:500px ;top: 50%;transform: translateY(+40%);">welcome</p></h1>
@@ -29,7 +29,7 @@
         {%else%}
         <div class="carousel-item w-100 ml-2">
         {%endif%}
-        <img class="d-block w-100" style="height:450px ;" src="{{image.Image.url}}" alt="Third slide">
+        <img class="d-block w-100"  src="{{image.Image.url}}" alt="Third slide">
       </div>
         {%endfor%}
     </div>
@@ -48,21 +48,27 @@
   
 
  <div class="col-md-6 text-right w-100 mt-4 " style="color:#0E3C5E">
- <h1 > اسم المنتج: {{product.name}}</h1>
- <h4 class="mb-3"> الصنف: {{product.category_name}}</h4>
- <figure>
-  <blockquote>
- <p><h4>:الوصف</h4>{{product.description}}</p>
+ <h1 class="mb-3">: اسم المنتج </h1>
+ <h1 class="mb-3">{{product.name}}</h1>
+ <h4 class="mb-3">: الصنف</h4>
+ <h4 class="mb-3">{{product.category_name}}</h4>
+ <h4 class="mb-3">:الوصف</h4>
+ <figure >
+  <blockquote >
+ <p >{{product.description}}</p>
   </blockquote></figure>
- <h2 class="mb-3">{{product.price}} S.P  :السعر</h2>
+ <h4 class="mb-3">: اللون</h4>
+ <h4 class="mb-3">{{product.color_pro}}</h4>
+ <h2 class="mb-3">: السعر</h2>
+ <h2>{{product.price}} S.P </h2>
  <ul class="social-network social-circle" style="list-style: none;">  
   <li> <a href="https://www.facebook.com/albaraa19" class="icoFacebook mb-2" title="Facebook">https://www.facebook.com/albaraa19  <img src="https://img.icons8.com/office/30/000000/facebook-new.png"/></a> </li>  
-  <li> <a href="https://wa.me/message/K6NKEUWXYDZRO1" class="icoLinkedin mb-2" title="whatsapp">0980 731 005<img src="https://img.icons8.com/office/30/000000/whatsapp--v1.png"/> </a></li>  
- <li> <a href="#" title="instagram"> in.albaraa19<img src="https://img.icons8.com/office/30/000000/instagram-new.png"/></a> </li>  
+  <li> <a href="https://wa.me/message/K6NKEUWXYDZRO1" class="icoLinkedin mb-2" title="whatsapp">0980 731 005 <img src="https://img.icons8.com/office/30/000000/whatsapp--v1.png"/> </a></li>  
+ <li> <a href="#" title="instagram"> in.albaraa19 <img src="https://img.icons8.com/office/30/000000/instagram-new.png"/></a> </li>  
   <li><a href="" class="mb-2">albaraabookstore19@gmail.com <img src="https://img.icons8.com/office/30/000000/google-plus.png"/></a></li>
-  <li><a href="https://t.me/albaraa19" class="mb-2">https://t.me/albaraa19<img src="https://img.icons8.com/office/30/000000/sent.png"/></a></li>
+  <li><a href="https://t.me/albaraa19" class="mb-2">https://t.me/albaraa19 <img src="https://img.icons8.com/office/30/000000/sent.png"/></a></li>
 </ul> 
-<p style="font-size: 40px;">للطلب و الاستفسار التواصل على حصراً whatsapp   </p>
+<p style="font-size: 40px;">للطلب و الاستفسار التواصل حصراً على  whatsapp   </p>
     </div>
     </div>
     </div>

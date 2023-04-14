@@ -8,7 +8,7 @@ class category(models.Model):
     parent = models.ForeignKey(
         'self', on_delete=models.CASCADE, blank=True, null=True, verbose_name="الصنف الأساسي إن وجد")
     Image = models.ImageField(
-        upload_to='Git_Baraa/lab-baraa/baraa/media/category/', default="Git_Baraa/lab-baraa/baraa/media/category/notfound.png", verbose_name="الصورة")
+        upload_to='../media/category/', default="../media/category/notfound.png", verbose_name="الصورة")
 
     def __str__(self):
         return self.main_category
