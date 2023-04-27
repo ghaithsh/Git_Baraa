@@ -67,7 +67,7 @@ def sub_category_list(request, id):
         pass
 
 
-@login_required(login_url='http://"+"64.226.77.150:5050"+"/admin/')
+@login_required(login_url="http://"+"64.226.77.150:5050"+"/admin")
 def product_page(request):
     if request.method == 'POST':
         if request.POST.get("search"):
