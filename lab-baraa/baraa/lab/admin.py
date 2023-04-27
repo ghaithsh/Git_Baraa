@@ -24,6 +24,6 @@ admin.site.register(image_product, imageAdmin)
 admin.site.register(category, categoryAdmin)
 admin.site.site_header = "صفحة المستخدم"
 admin.site.index_title = 'مكتبة البراء'
-admin.site.site_url = "https://ghaith.pythonanywhere.com/home"
+admin.site.site_url = "http://64.226.77.150:5050/home"
 admin.site.empty_value_display = 'لا يوجد'
 # Register your models here.
